@@ -1,0 +1,156 @@
+$sizes: auto, 0, 10, 20, 30, 40;
+
+// padding
+@for $i from 1 through length($sizes) {
+	$size: nth($sizes, $i);
+
+	// turn $sizes to string
+	$sizeString: quote(#{$size});
+	$selector: str-slice($sizeString, 0, 1);
+
+	$value: "";
+
+	@if not($size == auto or $size == 0) {
+		$value: #{$size + px};
+	} @else {
+		$value: $size;
+	}
+
+	.p {
+		// padding
+		&-#{$selector} {
+			padding: $value;
+		}
+
+		&t-#{$selector} {
+			padding-top: $value;
+		}
+
+		&r-#{$selector} {
+			padding-right: $value;
+		}
+
+		&b-#{$selector} {
+			padding-bottom: $value;
+		}
+
+		&l-#{$selector} {
+			padding-left: $value;
+		}
+
+		&y-#{$selector} {
+			padding-top: $value;
+			padding-bottom: $value;
+		}
+
+		&x-#{$selector} {
+			padding-left: $value;
+			padding-right: $value;
+		}
+	}
+
+	// padding mobile
+	@media (min-width: 576px) {
+		.p {
+			&-sm-#{$selector} {
+				padding: $value;
+			}
+
+			&t-sm-#{$selector} {
+				padding-top: $value;
+			}
+
+			&r-sm-#{$selector} {
+				padding-right: $value;
+			}
+
+			&b-sm-#{$selector} {
+				padding-bottom: $value;
+			}
+
+			&l-sm-#{$selector} {
+				padding-left: $value;
+			}
+
+			&y-sm-#{$selector} {
+				padding-top: $value;
+				padding-bottom: $value;
+			}
+
+			&x-sm-#{$selector} {
+				padding-left: $value;
+				padding-right: $value;
+			}
+		}
+	}
+
+	// padding tablet
+	@media (min-width: 768px) {
+		.p {
+			&-md-#{$selector} {
+				padding: $value;
+			}
+
+			&t-md-#{$selector} {
+				padding-top: $value;
+			}
+
+			&r-md-#{$selector} {
+				padding-right: $value;
+			}
+
+			&b-md-#{$selector} {
+				padding-bottom: $value;
+			}
+
+			&l-md-#{$selector} {
+				padding-left: $value;
+			}
+
+			&y-md-#{$selector} {
+				padding-top: $value;
+				padding-bottom: $value;
+			}
+
+			&x-md-#{$selector} {
+				padding-left: $value;
+				padding-right: $value;
+			}
+		}
+	}
+
+	// padding desktop
+	@media (min-width: 960px) {
+		.p {
+			&-lg-#{$selector} {
+				padding: $value;
+			}
+
+			&t-lg-#{$selector} {
+				padding-top: $value;
+			}
+
+			&r-lg-#{$selector} {
+				padding-right: $value;
+			}
+
+			&b-lg-#{$selector} {
+				padding-bottom: $value;
+			}
+
+			&l-lg-#{$selector} {
+				padding-left: $value;
+			}
+
+			&y-lg-#{$selector} {
+				padding-top: $value;
+				padding-bottom: $value;
+			}
+
+			&x-lg-#{$selector} {
+				padding-left: $value;
+				padding-right: $value;
+			}
+		}
+	}
+}

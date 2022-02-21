@@ -1,0 +1,156 @@
+$sizes: auto, 0, 10, 20, 30, 40;
+
+// margin
+@for $i from 1 through length($sizes) {
+	$size: nth($sizes, $i);
+
+	// turn $sizes to string
+	$sizeString: quote(#{$size});
+	$selector: str-slice($sizeString, 0, 1);
+
+	$value: "";
+
+	@if not($size == auto or $size == 0) {
+		$value: #{$size + px};
+	} @else {
+		$value: $size;
+	}
+
+	.m {
+		// margin
+		&-#{$selector} {
+			margin: $value;
+		}
+
+		&t-#{$selector} {
+			margin-top: $value;
+		}
+
+		&r-#{$selector} {
+			margin-right: $value;
+		}
+
+		&b-#{$selector} {
+			margin-bottom: $value;
+		}
+
+		&l-#{$selector} {
+			margin-left: $value;
+		}
+
+		&y-#{$selector} {
+			margin-top: $value;
+			margin-bottom: $value;
+		}
+
+		&x-#{$selector} {
+			margin-left: $value;
+			margin-right: $value;
+		}
+	}
+
+	// margin mobile
+	@media (min-width: 576px) {
+		.m {
+			&-sm-#{$selector} {
+				margin: $value;
+			}
+
+			&t-sm-#{$selector} {
+				margin-top: $value;
+			}
+
+			&r-sm-#{$selector} {
+				margin-right: $value;
+			}
+
+			&b-sm-#{$selector} {
+				margin-bottom: $value;
+			}
+
+			&l-sm-#{$selector} {
+				margin-left: $value;
+			}
+
+			&y-sm-#{$selector} {
+				margin-top: $value;
+				margin-bottom: $value;
+			}
+
+			&x-sm-#{$selector} {
+				margin-left: $value;
+				margin-right: $value;
+			}
+		}
+	}
+
+	// margin tablet
+	@media (min-width: 768px) {
+		.m {
+			&-md-#{$selector} {
+				margin: $value;
+			}
+
+			&t-md-#{$selector} {
+				margin-top: $value;
+			}
+
+			&r-md-#{$selector} {
+				margin-right: $value;
+			}
+
+			&b-md-#{$selector} {
+				margin-bottom: $value;
+			}
+
+			&l-md-#{$selector} {
+				margin-left: $value;
+			}
+
+			&y-md-#{$selector} {
+				margin-top: $value;
+				margin-bottom: $value;
+			}
+
+			&x-md-#{$selector} {
+				margin-left: $value;
+				margin-right: $value;
+			}
+		}
+	}
+
+	// margin desktop
+	@media (min-width: 960px) {
+		.m {
+			&-lg-#{$selector} {
+				margin: $value;
+			}
+
+			&t-lg-#{$selector} {
+				margin-top: $value;
+			}
+
+			&r-lg-#{$selector} {
+				margin-right: $value;
+			}
+
+			&b-lg-#{$selector} {
+				margin-bottom: $value;
+			}
+
+			&l-lg-#{$selector} {
+				margin-left: $value;
+			}
+
+			&y-lg-#{$selector} {
+				margin-top: $value;
+				margin-bottom: $value;
+			}
+
+			&x-lg-#{$selector} {
+				margin-left: $value;
+				margin-right: $value;
+			}
+		}
+	}
+}
